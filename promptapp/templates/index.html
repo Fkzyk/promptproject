@@ -5,11 +5,8 @@
     Home - Prompt Finder
 {% endblock %}
 
-{% comment %} {% block content_title %}
-    <h1>Welcome to BizConsult</h1>
-{% endblock %} {% endcomment %}
-
 {% block content %}
+    {% include 'navbar.html' %}
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -17,27 +14,27 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        <!-- Spinner  End -->
-        <!-- Navbar & Hero Start -->
-            <div class="container-xxl bg-primary hero-header">
-                <div class="container">
-                    <div class="row g-5 align-items-center">
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <div id="home-section"></div>
-                            <h1 class="text-white mb-4 animated zoomIn">未来を切り拓くプロンプトの力<br>Prompt Finderへようこそ</h1>
-                            <p class="text-white pb-3 animated zoomIn">Prompt Finderは AIと人間の協力によって生み出される無限の可能性を提供します。<br>
-                                私たちは ただのツールを提供するのではありません。<br>
-                                あなたの夢を形にし ビジョンを実現するための強力なパートナーです。</p>
-                            <a href="#firstprompt-section" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">もっと知りたい</a>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src={% static 'img/hero.png' %} alt="">
-                        </div>
+        <!-- Spinner End -->
+
+        <!-- Hero Start -->
+        <div class="container-xxl bg-primary hero-header">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <div id="home-section"></div>
+                        <h1 class="text-white mb-4 animated zoomIn">未来を切り拓くプロンプトの力<br>Prompt Finderへようこそ</h1>
+                        <p class="text-white pb-3 animated zoomIn">Prompt Finderは AIと人間の協力によって生み出される無限の可能性を提供します。<br>
+                            私たちは ただのツールを提供するのではありません。<br>
+                            あなたの夢を形にし ビジョンを実現するための強力なパートナーです。</p>
+                        <a href="#firstprompt-section" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">もっと知りたい</a>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <img class="img-fluid animated zoomIn" src={% static 'img/hero.png' %} alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Navbar & Hero End -->
+        <!-- Hero End -->
 
         <!-- 初めてのプロンプト Start -->
         <div class="container-xxl py-6">
@@ -83,7 +80,8 @@
             </div>
         </div>
         <!-- 初めてのプロンプト End -->
-
+        
+        
         <!-- Tryする？ Start -->
         <div class="container-xxl bg-primary my-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="container px-lg-5">
@@ -92,17 +90,22 @@
                         <h3 class="text-white">Prompt Finder する？</h3>
                         <small class="text-white">ここから気になるキーワードを入力してみて</small>
                         <div class="position-relative w-100 mt-3">
-                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="ex) くだけた文章を企業へのメール返信用に変えて" style="height: 48px;">
-                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                            <form action="{% url 'promptapp:search' %}" method="get">
+                                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" name="q" placeholder="ex) くだけた文章を企業へのメール返信用に変えて" style="height: 48px;">
+                                <button type="submit" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2">
+                                    <i class="fa fa-paper-plane text-primary fs-4"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-6 text-center mb-n5 d-none d-md-block">
-                        <img class="img-fluid mt-5" style="max-height: 250px;"  src="{% static 'img/newsletter.png' %}">
+                        <img class="img-fluid mt-5" style="max-height: 250px;" src="{% static 'img/newsletter.png' %}">
                     </div>
                 </div>
             </div>
         </div>
         <!-- Tryする？ End -->
+
 
         <!-- プロンプトの使い方 Start -->
         <div class="container-xxl py-6">

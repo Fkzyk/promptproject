@@ -518,3 +518,137 @@
     border-radius: 50%; 
     object-fit: cover; /* 画像がコンテナのサイズに合わせて切り抜かれる */
 }
+
+/*検索結果について*/
+/* styles.css */
+.search-container {
+    margin-top: 80px; /* 適切な余白を追加 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色を追加して見やすく */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px; /* スペースを均等にするためのプロパティを追加 */
+}
+
+.search-bar input,
+.search-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1; /* 入力フィールドと選択フィールドが均等に広がるようにする */
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-results {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 中央寄せ */
+}
+
+.search-results li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+.search-results p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    text-align: center; /* 中央寄せ */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+/* mypage.css */
+/* mypage.css */
+.mypage-container {
+    margin-top: 80px; /* 適切な余白を追加 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色を追加して見やすく */
+}
+
+.mypage-search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px; /* スペースを均等にするためのプロパティを追加 */
+}
+
+.mypage-search-bar input,
+.mypage-search-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1; /* 入力フィールドと選択フィールドが均等に広がるようにする */
+}
+
+.mypage-search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.mypage-search-results {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mypage-search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 中央寄せ */
+}
+
+.mypage-search-results li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+.mypage-search-results p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    text-align: center; /* 中央寄せ */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}

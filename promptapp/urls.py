@@ -8,4 +8,5 @@ urlpatterns = [
     path('categories/<str:category_name>/', views.category_list, name='category_list'),
     path('privacypolicy/', views.PrivacypolicyView.as_view(), name='privacypolicy'),
     path('mypage/', views.MyPageView.as_view(), name='mypage'),
+    path('search/', views.search, name='search'),
 ]
