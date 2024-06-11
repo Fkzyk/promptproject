@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Lifestyle List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Lifestyle List</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item.title }}: {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

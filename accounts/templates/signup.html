@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign up{% endblock %}
+{% block extra_head %}
+<style>
+    body.signup-page {
+        background-color: white;
+        color: black;
+    }
+    .signup-container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .signup-container h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .signup-container img {
+        width: 140px;
+        height: 140px;
+    }
+    .signup-container a {
+        font-size: 18px;
+        color: #007bff;
+    }
+    /* Override base.css styles */
+    .navbar, .navbar-nav {
+        {% comment %} background-color: #00B98E !important; /* 薄緑色の背景 */ {% endcomment %}
+        color: #FFFFFF !important; /* 白の文字色 */
+    }
+    .navbar-brand, .nav-link, .dropdown-item {
+        color: gray; !important; /* グレーの文字色 */
+    }
+    /* Ensure navbar stays at the top */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+    }
+    .signup-container {
+        padding-top: 100px; /* Adjust padding to prevent overlap with navbar */
+    }
+    /* フォームフィールドのスタイル */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        background-color: #FFFFFF; /* 背景色を白に設定 */
+        color: black; /* 文字色を黒に設定 */
+        border: 1px solid #ccc; /* ボーダーを追加 */
+        padding: 10px; /* パディングを追加 */
+        width: 100%; /* 幅を100%に設定 */
+        box-sizing: border-box; /* ボックスサイズを設定 */
+    }
+    /* フォームフィールドの間のスペースを調整 */
+    .form-group {
+        margin-bottom: 1.5rem; /* フォームグループの間にスペースを追加 */
+        text-align: left; /* フィールドラベルと入力欄の配置を調整 */
+    }
+    /* エラーメッセージのスタイル */
+    p.error {
+        color: red;
+    }
+</style>
+{% endblock %}
+{% block body_class %}signup-page{% endblock %}
+
+{% block content %}
+<!-- Bootstrapのグリッドシステム -->
+<hr>
+<div class="container signup-container">
+    <!-- 行を配置 -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3>サインアップ</h3>
+            <!-- サインアップのフォームを配置 -->
+            <form method="post">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="form-group">
+                    <!-- ラベルを出力 -->
+                    {{ field.label_tag }}<br>
+                    <!-- <input>タグを出力 -->
+                    {{ field }}
+                    <!-- help_textを出力 -->
+                    {% if field.help_text %}
+                        <small style="color: grey">{{ field.help_text }}</small>
+                    {% endif %}
+                    <!-- エラー発生時のテキストerrorsを出力 -->
+                    {% for error in field.errors %}
+                        <p class="error">{{ error }}</p>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                {% comment %} <p style="color: red">
+                    ※メールアドレスはパスワードをリセットする際に必要になりますので、
+                    登録をお願いいたします。
+                </p> {% endcomment %}
+                <!-- Sign up ボタンを出力 -->
+                <input type="submit" value="Sign up" class="btn btn-primary btn-block">
+            </form>
+            <!-- トップページのリンクテキスト -->
+            <br>
+            <p><a href="{% url 'promptapp:index' %}">登録をやめてトップページへ戻る</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

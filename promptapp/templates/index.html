@@ -1,0 +1,521 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Home - Prompt Finder
+{% endblock %}
+
+{% comment %} {% block content_title %}
+    <h1>Welcome to BizConsult</h1>
+{% endblock %} {% endcomment %}
+
+{% block content %}
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Navbar & Hero Start -->
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <div id="home-section"></div>
+                            <h1 class="text-white mb-4 animated zoomIn">未来を切り拓くプロンプトの力<br>Prompt Finderへようこそ</h1>
+                            <p class="text-white pb-3 animated zoomIn">Prompt Finderは AIと人間の協力によって生み出される無限の可能性を提供します。<br>
+                                私たちは ただのツールを提供するのではありません。<br>
+                                あなたの夢を形にし ビジョンを実現するための強力なパートナーです。</p>
+                            <a href="#firstprompt-section" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">もっと知りたい</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn" src={% static 'img/hero.png' %} alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- 初めてのプロンプト Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div id="firstprompt-section" class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
+                        <img class="img-fluid" src="{% static 'img/about.png' %}" alt="About Image">
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">初めてのプロンプト</div>
+                        <h2 class="mb-4">プロンプトとは<br>AIに対して与える指示や質問のこと</h2>
+                        <p class="mb-4">プロンプトとはAIに対して与える指示や質問のことです。<br>
+                            正確で具体的なプロンプトを使うと AIはより適切な回答を返します。<br>
+                            例えば「旅行先のおすすめ」ではなく「6月に家族で訪れるヨーロッパの歴史的名所」と具体的に伝えると 的確な提案が得られます。<br>
+                            正しいプロンプト作成が AIの力を最大限に引き出すコツとなります。</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-12 d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <img src="{% static 'img/logo-chatgpt.png' %}" alt="Logo-chatgpt" class="icon-image">
+                                </div>
+                                <div class="ms-4">
+                                    <h6>ChatGPT</h6>
+                                    <span>ChatGPTは OpenAI社が開発した対話型AIで 多様な質問に答えたり<br>
+                                        文章生成や会話のサポートを行うことができます。<br>
+                                        生成モデルとしての性能が高く幅広い応答が可能です。</span>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex">
+                                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                                    <img src="{% static 'img/logo-claude3.png' %}" alt="Logo-claude3" class="icon-image">
+                                </div>
+                                <div class="ms-4">
+                                    <h6>Claude3</h6>
+                                    <span>Claude 3は、Anthropic社が開発した対話型AIで 質問応答 文章生成<br>
+                                        会話サポートなど多様なタスクに対応します。<br>
+                                        安全性と倫理を重視した設計が特徴で 信頼性の高い回答を提供します。</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% comment %} <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Read More</a> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 初めてのプロンプト End -->
+
+        <!-- Tryする？ Start -->
+        <div class="container-xxl bg-primary my-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Prompt Finder する？</h3>
+                        <small class="text-white">ここから気になるキーワードを入力してみて</small>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="ex) くだけた文章を企業へのメール返信用に変えて" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="max-height: 250px;"  src="{% static 'img/newsletter.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tryする？ End -->
+
+        <!-- プロンプトの使い方 Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">カテゴリから探す</div>
+                    <h2 class="mb-5">カテゴリ一覧</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fas fa-door-open fa-2x"></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='creative' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">クリエイティブ</h5>
+                                <span>YouTuberが新しい動画の脚本を考えています。「初心者向けのガーデニングチャンネルの動画脚本を作成してください」とプロンプトを入力します。
+                                    AIは、オープニングの挨拶から、必要な道具の紹介、ガーデニングの手順、締めの言葉までを含む詳細な脚本を生成します。
+                                    YouTuberはその脚本を基に動画を撮影し、視聴者に分かりやすく情報を提供できます。
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fas fa-pencil-alt fa-2x"></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='study' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">学習</h5>
+                                <span>高校生が数学の試験に向けて勉強しています。「高校2年生レベルの代数の練習問題を作成して、解説も付けてください」とリクエストします。
+                                    AIは学生の理解度に応じた練習問題とその解説を生成し、学生は効果的に学習を進めることができます。
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fa fa-chart-line fa-2x"></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='business' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">ビジネス</h5>
+                                <span>新しいスタートアップ企業が製品を市場に出そうとしています。「新しいスマートホームデバイスのためのキャッチフレーズと広告コピーを考えてください」と依頼します。
+                                    AIはターゲットオーディエンスに響くキャッチフレーズと説得力のある広告文を生成し、企業はそれを使って効果的なマーケティングキャンペーンを展開できます。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fa fa-chart-area fa-2x"></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='lifestyle' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">ライフスタイル</h5>
+                                <span>「低カロリーで高タンパクの1週間分の食事プランを作成してください」とお願いすると、
+                                    AIはバランスの取れた食事プランを提案します。
+                                    ユーザーはそのプランに従って食事を準備し、レシピを考える必要がありません。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fas fa-laptop fa-2x"></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='technology' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">テクノロジー</h5>
+                                <span>「JavaScriptで簡単なTo-Doリストアプリのコードを書いてください」と依頼します。
+                                    AIは基本的なTo-Doリストアプリのコードを生成し、開発者はそのコードを元にカスタマイズしてプロジェクトを進めることができます。</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item rounded h-100">
+                            <div class="d-flex justify-content-between">
+                                <div class="service-icon">
+                                    <i class="fas fa-landmark fa-2x"></i></i>
+                                </div>
+                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='travel' %}">
+                                    <i class="fa fa-link fa-2x"></i>
+                                </a>
+                            </div>
+                            <div class="p-5">
+                                <h5 class="mb-3 service-title">旅行 レジャー</h5>
+                                <span>「東京で週末旅行のプランを作成して。観光名所とおすすめのレストランを含めてね」とリクエストします。
+                                    AIは具体的な観光名所やレストランのリストを提案し、旅行者はそれを基に詳細な旅行プランを立てることができます。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- プロンプトの使い方 End -->
+
+        <!-- 特徴 Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div id="baseprompt-section"></div>
+                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">特徴</div>
+                        <h2 class="mb-4">無料で使用できるChatGPT-4o<br>基本機能</h2>
+                        <p>ChatGPT-4oは 2024年5月13日に発表されました。<br>
+                            テキストだけでなく 音声や画像の入力にも対応するマルチモーダル機能を備え ユーザーは様々な形式でAIとやり取りできます。<br>
+                            無料ユーザーは 利用回数に制限があるものの これらの高度な機能を活用することができます。</p>
+                        <p>これによりChatGPT-4oはユーザーの多様なニーズに応え 日常生活やビジネスにおいて強力なツールとなります。<br>
+                            GPT-4oの導入により より多くのユーザーが最新のAI技術を手軽に利用できるようになりました。</p>
+                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="https://openai.com/index/hello-gpt-4o/">ChatGPT-4oをダウンロード</a>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-5">
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fas fa-laptop text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">Webアクセス</h6>
+                                </div>
+                                <span>ウェブアクセス機能を備えており インターネット上の最新情報を検索して提供することができます。最新のニュースやトレンドを即座に取得することが可能です。</span>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fas fa-store text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">GPTストアの利用</h6>
+                                </div>
+                                <span>GPTストアを通じてカスタムGPTを発見し利用することができます。<br>
+                                    特定の用途に特化したモデルを簡単に活用でき ニーズに合った応答を得ることができます​ 。</span>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">マルチモーダル</h6>
+                                </div>
+                                <span>テキストだけでなく 音声や画像の入力にも対応しています。<br>例えば、画像をアップロードして内容を説明してもらうことができます​</span>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fa fa-headset text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">対話機能</h6>
+                                </div>
+                                <span>自然な会話が可能な対話機能を備えています。<br>
+                                    質問に答えたり 会話を続けたりすることで ユーザーとの双方向での自然なやり取りが楽しめます。</span>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fa fa-chart-pie text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">データ分析</h6>
+                                </div>
+                                <span>アップロードしたデータを解析し チャートやグラフを作成することが可能です。<br>これによりビジネスや研究での利用が容易になります。</span>
+                            </div>
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.6s">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                        <i class="fas fa-bolt text-white"></i>
+                                    </div>
+                                    <h6 class="mb-0">ファイルアップロードと処理</h6>
+                                </div>
+                                <span>ファイルのアップロードが可能で ドキュメントの要約や内容の分析 さらにはライティングの支援まで行え業務効率が大幅に向上します。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 特徴 End -->
+
+        <!-- AIツールロゴ Start -->
+        
+        <div class="text-center mb-2">
+            <p class="download-text">DOWNLOAD</p>
+        </div>
+        <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="owl-carousel client-carousel">
+                    <a href="https://openai.com/index/hello-gpt-4o/"><img class="img-fluid" src={% static 'img/logo-chatgpt.png' %} alt="logo-chatgpt"></a>
+                    <a href="https://www.anthropic.com/"><img class="img-fluid" src={% static 'img/logo-claude3.png' %} alt="logo-claude3"></a>
+                    <a href="https://gemini.google.com/app"><img class="img-fluid" src={% static 'img/logo-gemini.png' %} alt="logo-gemini"></a>
+                    <a href="https://www.bing.com/chat?q=Microsoft+Copilot&FORM=hpcodx"><img class="img-fluid" src={% static 'img/logo-copilot.png' %} alt="logo-copilot"></a>
+                    <a href="https://www.perplexity.ai/"><img class="img-fluid" src={% static 'img/logo-perplexity.png' %} alt="logo-perplexity"></a>
+                    {% comment %} <a href="#"><img class="img-fluid" src={% static 'img/logo-6.png' %} alt=""></a>
+                    <a href="#"><img class="img-fluid" src={% static 'img/logo-7.png' %} alt=""></a>
+                    <a href="#"><img class="img-fluid" src={% static 'img/logo-8.png' %} alt=""></a> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <!-- AIツールロゴ End -->
+
+        <!-- 活用例 Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">こんなときにAI</div>
+                    <h2 class="mb-5">ChatGPT活用例</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>難しい課題や宿題の質問に答えを見つけたり レポートの構成や内容についてアドバイスを得たりできます。</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src={% static 'img/testimonial-1.jpg' %}>
+                            <div class="ps-3">
+                                <h6 class="mb-1">大学生</h6>
+                                <small>レポートが行き詰まったとき</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>「科学の授業で使える実験アイデアを教えてください。」や「中学1年生向けの歴史の授業計画を作成してください。」</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src={% static 'img/testimonial-2.jpg' %}>
+                            <div class="ps-3">
+                                <h6 class="mb-1">中学校教諭</h6>
+                                <small>各学年に応じた授業計画を作成</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>新しいプロジェクトの提案書を作成してください。クライアントへのメールをもっと丁寧な表現に変更してください。などやりとりがスムースに。</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src={% static 'img/testimonial-3.jpg' %}>
+                            <div class="ps-3">
+                                <h6 class="mb-1">フリーランス</h6>
+                                <small>クライアントへのメール送信文</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item rounded p-4">
+                        <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                        <p>「科学の授業で使える実験アイデアを教えてください。」や「中学1年生向けの歴史の授業計画を作成してください。」</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src={% static 'img/testimonial-4.jpg' %}>
+                            <div class="ps-3">
+                                <h6 class="mb-1">中学校教諭</h6>
+                                <small>各学年に応じた授業計画を作成</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 活用例 End -->
+
+        <!-- 自己紹介 Start -->
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">自己紹介</div>
+                    <h2 class="mb-5">PRODUCED BY</h2>
+                </div>
+    {% comment %}<div class="row g-4">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <h5>えふ かず</h5>
+                            <p class="mb-4">AIオタク<br>犬の行動心理学オタク</p>
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{% static 'img/team-1.jpg' %}" alt="えふかず写真">
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                                {% comment %} <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div> 
+                </div>{% endcomment %}
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item">
+                            <h5>ぽんずくん</h5>
+                            <p class="mb-4">つねに愛でられる<br>えふかずのパートナー犬</p>
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{% static 'img/team-2.jpg' %}" alt="ぽんずくん">
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://www.facebook.com/profile.php?id=100085323297006"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://x.com/inuno_shiawase"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/inuno_shiawase_lab"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item">
+                            <h5>えふ かず</h5>
+                            <p class="mb-4">AIオタク<br>犬の行動心理学オタク</p>
+                            <img class="img-fluid rounded-circle w-100 mb-4" src="{% static 'img/team-3.jpg' %}" alt="えふかず写真">
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://www.facebook.com/profile.php?id=100085323297006"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://x.com/inuno_shiawase"><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href="https://www.instagram.com/inuno_shiawase_lab"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                    {% comment %} <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="team-item">
+                            <h5>Full Name</h5>
+                            <p class="mb-4">Designation</p>
+                            <img class="img-fluid rounded-circle w-100 mb-4" src={% static 'img/team-4.jpg' %} alt="">
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square text-primary bg-white m-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+        <!-- 自己紹介 End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark text-light footer pt-5 wow fadeIn" data-wow-delay="0.1s" style="margin-top: 6rem;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">お問い合わせ</h5>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Tokyo</p>
+                        {% comment %} <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p> {% endcomment %}
+                        <p><i class="fa fa-envelope me-3"></i>furukawak1008@gmail.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://x.com/inuno_shiawase"><i class="fab fa-twitter"></i></a>
+                            {% comment %} <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a> {% endcomment %}
+                            <a class="btn btn-outline-light btn-social" href="https://youtube.com/@inunoshiawaselab?si=tQ7kE5bpEsO8dfoV"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/inuno_shiawase_lab"><i class="fab fa-instagram"></i></a>
+                            {% comment %} <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a> {% endcomment %}
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">クイック アクセス</h5>
+                        <a class="btn btn-link" href="firstprompt-section">初心者はこちら</a>
+                        <a class="btn btn-link" href="#baseprompt-section">プロンプトの基本</a>
+                        <a class="btn btn-link" href="{% url 'promptapp:privacypolicy' %}">プライバシーポリシー</a>
+                        <a class="btn btn-link" href="">マイページ</a>
+                        {% comment %} <a class="btn btn-link" href="">Career</a> {% endcomment %}
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">人気検索</h5>
+                        <a class="btn btn-link" href="">ジャンル検索</a>
+                        <a class="btn btn-link" href="">キーワード検索</a>
+                        <a class="btn btn-link" href="">お気に入り一覧</a>
+                        {% comment %} <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Career</a> {% endcomment %}
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">公式LINE追加</h5>
+                        <p>最新AIニュースや本当に仕事効率が<br>爆上がりするお得情報を発信しています。</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#home-section">Prompt Finder</a>, All Right Reserved. <br>
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            <br>Distributed By: <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="#home-section">Home</a>
+                                {% comment %} <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#home-section" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+{% endblock %}

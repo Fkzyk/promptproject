@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Privacy Policy{% endblock %}
+{% block extra_head %}
+<style>
+    body.privacypolicy-page {
+        background-color: white;
+        color: black;
+    }
+    .privacypolicy-container {
+        margin-top: 100px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+    .privacypolicy-container h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .privacypolicy-container p {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+    .privacypolicy-container a {
+        color: #007bff;
+    }
+    .navbar, .navbar-nav {
+        background-color: #00B98E !important; /* 薄緑色の背景 */
+        color: #FFFFFF !important; /* 白の文字色 */
+    }
+    {% comment %} .navbar-brand, .nav-link, .dropdown-item {
+        color: gray; /* グレーの文字色 */
+    } {% endcomment %}
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+    }
+    .privacypolicy-container {
+        padding-top: 100px; /* Adjust padding to prevent overlap with navbar */
+    }
+</style>
+{% endblock %}
+{% block body_class %}privacypolicy-page{% endblock %}
+{% block content %}
+<div class="container privacypolicy-container">
+    <h2>プライバシーポリシー</h2>
+    <br><br>
+    <h3>個人情報の利用目的</h3>
+    <p>当アプリケーションでは、お問い合わせや記事へのコメントの際、名前やメールアドレス等の個人情報を入力いただく場合がございます。取得した個人情報は、お問い合わせに対する回答や必要な情報を電子メールなどでご連絡する場合に利用させていただくものであり、これらの目的以外では利用いたしません。</p>
+    <br><br>
+    <h3>広告について</h3>
+    <p>当アプリケーションでは、第三者配信の広告サービス（Googleアドセンス、A8.net）を利用しており、ユーザーの興味に応じた商品やサービスの広告を表示するため、クッキー（Cookie）を使用しております。クッキーを使用することで当サイトはお客様のコンピュータを識別できるようになりますが、お客様個人を特定できるものではありません。</p>
+    <p>Cookieを無効にする方法やGoogleアドセンスに関する詳細は「広告 - ポリシーと規約 - Google」をご確認ください。</p>
+    <p>また、PromptFinderは、Amazon.co.jpを宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。</p>
+    <br><br>
+    <h3>アクセス解析ツールについて</h3>
+    <p>当アプリケーションでは、Googleによるアクセス解析ツール「Googleアナリティクス」を利用しています。このGoogleアナリティクスはトラフィックデータの収集のためにクッキー（Cookie）を使用しております。トラフィックデータは匿名で収集されており、個人を特定するものではありません。</p>
+    <br><br>
+    <h3>コメントについて</h3>
+    <p>当アプリケーションへのコメントを残す際に、IP アドレスを収集しています。これはアプリケーションの標準機能としてサポートされている機能で、スパムや荒らしへの対応以外にこのIPアドレスを使用することはありません。なお、全てのコメントは管理人が事前にその内容を確認し、承認した上での掲載となります。あらかじめご了承ください。</p>
+    <br><br>
+    <h3>免責事項</h3>
+    <p>当アプリケーションからのリンクやバナーなどで移動したサイトで提供される情報、サービス等について一切の責任を負いません。また当アプリケーションのコンテンツ・情報について、できる限り正確な情報を提供するように努めておりますが、正確性や安全性を保証するものではありません。情報が古くなっていることもございます。当サイトに掲載された内容によって生じた損害等の一切の責任を負いかねますのでご了承ください。</p>
+    <br><br>
+    <h3>著作権について</h3>
+    <p>当アプリケーションで掲載している文章や画像などにつきましては、無断転載することを禁止します。当アプリケーションは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、Eメールよりご連絡ください。迅速に対応いたします。</p>
+    <br><br>
+    <h3>リンクについて</h3>
+    <p>当アプリケーションは基本的にリンクフリーです。リンクを行う場合の許可や連絡は不要です。ただし、インラインフレームの使用や画像の直リンクはご遠慮ください。</p>
+</div>
+{% endblock %}
+

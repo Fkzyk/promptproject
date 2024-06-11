@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Log out{% endblock %}
+{% block extra_head %}
+<style>
+    body.logout-page {
+        background-color: white;
+        color: black;
+    }
+    .logout-container {
+        text-align: center;
+        margin-top: 100px;
+    }
+    .logout-container h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .logout-container img {
+        width: 140px;
+        height: 140px;
+    }
+    .logout-container a {
+        font-size: 18px;
+        color: #007bff;
+    }
+    /* Override base.css styles */
+    .navbar, .navbar-nav {
+        background-color: #00B98E; !important; /* 薄緑色の背景 */
+        color: #FFFFFF; !important; /* 白の文字色 */
+    }
+    .navbar-brand, .nav-link, .dropdown-item {
+        color: gray; !important; /* グレーの文字色 */
+    }
+    /* Ensure navbar stays at the top */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        top: 0;
+    }
+    .logout-container {
+        padding-top: 100px; /* Adjust padding to prevent overlap with navbar */
+    }
+</style>
+{% endblock %}
+{% block body_class %}logout-page{% endblock %}
+{% block content %}
+<div class="container logout-container">
+    <img src="{% static 'img/byerobot.png' %}" alt="Logout">
+    <h3>ログアウトしました</h3>
+    <p><a href="{% url 'promptapp:index' %}">トップページへ</a></p>
+</div>
+{% endblock %}
