@@ -19,8 +19,8 @@ class Category(models.Model):
 
 
 class Prompt(models.Model):
-    title = models.CharField(max_length=30)
-    description = models.TextField(max_length=50)
+    title = models.CharField(max_length=50)
+    description = models.TextField()
     content = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)

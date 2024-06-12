@@ -107,124 +107,124 @@
         <!-- Tryする？ End -->
 
 
-        <!-- プロンプトの使い方 Start -->
-        <div class="container-xxl py-6">
-            <div class="container">
-                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">カテゴリから探す</div>
-                    <h2 class="mb-5">カテゴリ一覧</h2>
+    <!-- カテゴリ一覧 Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">カテゴリから探す</div>
+                <h2 class="mb-5">カテゴリ一覧</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fas fa-door-open fa-2x"></i>
+                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='creative' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">クリエイティブ</h5>
+                            <span>YouTuberが新しい動画の脚本を考えています。「初心者向けのガーデニングチャンネルの動画脚本を作成してください」とプロンプトを入力します。
+                                AIは、オープニングの挨拶から、必要な道具の紹介、ガーデニングの手順、締めの言葉までを含む詳細な脚本を生成します。
+                                YouTuberはその脚本を基に動画を撮影し、視聴者に分かりやすく情報を提供できます。
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-4">
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fas fa-door-open fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='creative' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fas fa-pencil-alt fa-2x"></i>
                             </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">クリエイティブ</h5>
-                                <span>YouTuberが新しい動画の脚本を考えています。「初心者向けのガーデニングチャンネルの動画脚本を作成してください」とプロンプトを入力します。
-                                    AIは、オープニングの挨拶から、必要な道具の紹介、ガーデニングの手順、締めの言葉までを含む詳細な脚本を生成します。
-                                    YouTuberはその脚本を基に動画を撮影し、視聴者に分かりやすく情報を提供できます。
-                                </span>
-                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='study' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">学習</h5>
+                            <span>高校生が数学の試験に向けて勉強しています。「高校2年生レベルの代数の練習問題を作成して、解説も付けてください」とリクエストします。
+                                AIは学生の理解度に応じた練習問題とその解説を生成し、学生は効果的に学習を進めることができます。
+                            </span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fas fa-pencil-alt fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='study' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fa fa-chart-line fa-2x"></i>
                             </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">学習</h5>
-                                <span>高校生が数学の試験に向けて勉強しています。「高校2年生レベルの代数の練習問題を作成して、解説も付けてください」とリクエストします。
-                                    AIは学生の理解度に応じた練習問題とその解説を生成し、学生は効果的に学習を進めることができます。
-                                </span>
-                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='business' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">ビジネス</h5>
+                            <span>新しいスタートアップ企業が製品を市場に出そうとしています。「新しいスマートホームデバイスのためのキャッチフレーズと広告コピーを考えてください」と依頼します。
+                                AIはターゲットオーディエンスに響くキャッチフレーズと説得力のある広告文を生成し、企業はそれを使って効果的なマーケティングキャンペーンを展開できます。</span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-line fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='business' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fa fa-chart-area fa-2x"></i>
                             </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">ビジネス</h5>
-                                <span>新しいスタートアップ企業が製品を市場に出そうとしています。「新しいスマートホームデバイスのためのキャッチフレーズと広告コピーを考えてください」と依頼します。
-                                    AIはターゲットオーディエンスに響くキャッチフレーズと説得力のある広告文を生成し、企業はそれを使って効果的なマーケティングキャンペーンを展開できます。</span>
-                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='lifestyle' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">ライフスタイル</h5>
+                            <span>「低カロリーで高タンパクの1週間分の食事プランを作成してください」とお願いすると、
+                                AIはバランスの取れた食事プランを提案します。
+                                ユーザーはそのプランに従って食事を準備し、レシピを考える必要がありません。</span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fa fa-chart-area fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='lifestyle' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fas fa-laptop fa-2x"></i>
                             </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">ライフスタイル</h5>
-                                <span>「低カロリーで高タンパクの1週間分の食事プランを作成してください」とお願いすると、
-                                    AIはバランスの取れた食事プランを提案します。
-                                    ユーザーはそのプランに従って食事を準備し、レシピを考える必要がありません。</span>
-                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='technology' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
+                        </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">テクノロジー</h5>
+                            <span>「JavaScriptで簡単なTo-Doリストアプリのコードを書いてください」と依頼します。
+                                AIは基本的なTo-Doリストアプリのコードを生成し、開発者はそのコードを元にカスタマイズしてプロジェクトを進めることができます。</span>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fas fa-laptop fa-2x"></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='technology' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="service-item rounded h-100">
+                        <div class="d-flex justify-content-between">
+                            <div class="service-icon">
+                                <i class="fas fa-landmark fa-2x"></i></i>
                             </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">テクノロジー</h5>
-                                <span>「JavaScriptで簡単なTo-Doリストアプリのコードを書いてください」と依頼します。
-                                    AIは基本的なTo-Doリストアプリのコードを生成し、開発者はそのコードを元にカスタマイズしてプロジェクトを進めることができます。</span>
-                            </div>
+                            <a class="service-btn" href="{% url 'promptapp:category_search' category_name='travel' %}">
+                                <i class="fa fa-link fa-2x"></i>
+                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                        <div class="service-item rounded h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="service-icon">
-                                    <i class="fas fa-landmark fa-2x"></i></i>
-                                </div>
-                                <a class="service-btn" href="{% url 'promptapp:category_list' category_name='travel' %}">
-                                    <i class="fa fa-link fa-2x"></i>
-                                </a>
-                            </div>
-                            <div class="p-5">
-                                <h5 class="mb-3 service-title">旅行 レジャー</h5>
-                                <span>「東京で週末旅行のプランを作成して。観光名所とおすすめのレストランを含めてね」とリクエストします。
-                                    AIは具体的な観光名所やレストランのリストを提案し、旅行者はそれを基に詳細な旅行プランを立てることができます。</span>
-                            </div>
+                        <div class="p-5">
+                            <h5 class="mb-3 service-title">旅行 レジャー</h5>
+                            <span>「東京で週末旅行のプランを作成して。観光名所とおすすめのレストランを含めてね」とリクエストします。
+                                AIは具体的な観光名所やレストランのリストを提案し、旅行者はそれを基に詳細な旅行プランを立てることができます。</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- プロンプトの使い方 End -->
+    </div>
+    <!-- カテゴリ一覧 End -->
 
         <!-- 特徴 Start -->
         <div class="container-xxl py-6">

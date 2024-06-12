@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% load static custom_filters %}
-
+{% load static %}
+{% load custom_filters %}
 {% block title %}My Page{% endblock %}
 
 {% block extra_head %}
@@ -9,7 +9,7 @@
 
 {% block content %}
 {% include 'navbar.html' %}
-<div class="container mypage-container mt-5">
+<div class="container mypage-container">
     <h1>My Page</h1>
     <div class="search-bar">
         <form action="{% url 'promptapp:search' %}" method="get">
@@ -17,19 +17,29 @@
             <select name="category">
                 <option value="">カテゴリを選択</option>
                 {% for category in categories %}
-                    <option value="{{ category.name }}">{{ category_map|get_item:category.name }}</option>
+                    <option value="{{ category.name }}">{{ category.name|translate_category }}</option>
                 {% endfor %}
             </select>
             <button type="submit">検索</button>
         </form>
     </div>
-    <div class="search-results">
+    <div class="search-results mt-4">
         {% if prompts %}
-            <ul>
+            <div class="row">
                 {% for prompt in prompts %}
-                    <li>{{ prompt.title }}: {{ prompt.description }}</li>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <a href="{% url 'promptapp:prompt_detail' prompt.pk %}">
+                            <img src="{% static 'img/default_prompt_image.jpg' %}" class="card-img-top" alt="Prompt Image">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ prompt.title }}</h5>
+                            <p class="card-text">{{ prompt.description }}</p>
+                        </div>
+                    </div>
+                </div>
                 {% endfor %}
-            </ul>
+            </div>
         {% else %}
             <p>検索結果が見つかりませんでした。</p>
         {% endif %}

@@ -5,7 +5,6 @@
     --dark: #0E2E50;
 }
 
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -37,7 +36,6 @@
     padding-top: 6rem;
     padding-bottom: 6rem;
 }
-
 
 /*** Button ***/
 .btn {
@@ -76,13 +74,21 @@
     border-radius: 50px;
 }
 
-
 /*** Navbar ***/
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: var(--primary); /* 通常時の背景色をprimary colorに設定 */
+}
+
 .navbar .navbar-nav .nav-link {
     position: relative;
     margin-left: 25px;
     padding: 35px 0;
-    color: #FFFFFF;
+    color: #FFFFFF; /* 通常時の文字色を白に設定 */
     font-weight: 500;
     outline: none;
     transition: .5s;
@@ -91,6 +97,11 @@
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: #FFFFFF;
+}
+
+.sticky-top.navbar {
+    position: fixed;
+    background: #FFFFFF;
 }
 
 .sticky-top.navbar .navbar-nav .nav-link {
@@ -212,7 +223,6 @@
     }
 }
 
-
 /*** Hero Header ***/
 .hero-header {
     margin-bottom: 6rem;
@@ -238,7 +248,6 @@
 .page-header .breadcrumb-item+.breadcrumb-item::before {
     color: rgba(256, 256, 256, .5);
 }
-
 
 /*** Service ***/
 .service-item {
@@ -275,7 +284,6 @@
 .service-item:hover .service-btn {
     opacity: 1;
 }
-
 
 /*** Testimonial ***/
 .testimonial-carousel .owl-item .testimonial-item {
@@ -321,7 +329,6 @@
     color: #FFFFFF;
     background: var(--primary);
 }
-
 
 /*** Team ***/
 .team-item {
@@ -371,7 +378,6 @@
     padding: 15px;
     border: 1px solid var(--primary);
 }
-
 
 /*** Footer ***/
 .footer .btn.btn-social {
@@ -511,6 +517,7 @@
     font-weight: bold;
     margin-bottom: -60px;
 }
+
 /*初心者はこちらのアイコン*/
 .icon-image {
     width: 40px; /* アイコンと同じサイズに設定 */
@@ -520,7 +527,6 @@
 }
 
 /*検索結果について*/
-/* styles.css */
 .search-container {
     margin-top: 80px; /* 適切な余白を追加 */
     padding: 20px;
@@ -587,14 +593,13 @@
 }
 
 /* mypage.css */
-/* mypage.css */
 .mypage-container {
-    margin-top: 80px; /* 適切な余白を追加 */
+    margin-top: 120px; /* 必要に応じて調整 */
     padding: 20px;
     background-color: #f9f9f9; /* 背景色を追加して見やすく */
 }
 
-.mypage-search-bar {
+.search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -602,15 +607,15 @@
     gap: 10px; /* スペースを均等にするためのプロパティを追加 */
 }
 
-.mypage-search-bar input,
-.mypage-search-bar select {
+.search-bar input,
+.search-bar select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     flex: 1; /* 入力フィールドと選択フィールドが均等に広がるようにする */
 }
 
-.mypage-search-bar button {
+.search-bar button {
     padding: 10px 20px;
     border: none;
     background-color: #28a745;
@@ -619,21 +624,21 @@
     cursor: pointer;
 }
 
-.mypage-search-results {
+.search-results {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
-.mypage-search-results ul {
+.search-results ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     text-align: center; /* 中央寄せ */
 }
 
-.mypage-search-results li {
+.search-results li {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
@@ -643,7 +648,7 @@
     max-width: 600px; /* 最大幅を設定 */
 }
 
-.mypage-search-results p {
+.search-results p {
     margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
@@ -651,4 +656,251 @@
     text-align: center; /* 中央寄せ */
     width: 100%;
     max-width: 600px; /* 最大幅を設定 */
+}
+
+/* mypage.css */
+.mypage-container {
+    margin-top: 120px; /* 必要に応じて調整 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色を追加して見やすく */
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px; /* スペースを均等にするためのプロパティを追加 */
+}
+
+.search-bar input,
+.search-bar select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1; /* 入力フィールドと選択フィールドが均等に広がるようにする */
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-results {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-results ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 中央寄せ */
+}
+
+.search-results li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+.search-results p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff; /* 背景色を追加して見やすく */
+    text-align: center; /* 中央寄せ */
+    width: 100%;
+    max-width: 600px; /* 最大幅を設定 */
+}
+
+/* .mypage-container に適用されるスタイル */
+.mypage-container {
+    margin-top: 160px; /* ナビゲーションバーとコンテンツの間に十分なスペースを確保 */
+    padding: 20px;
+    background-color: #f9f9f9; /* 背景色を追加して見やすく */
+}
+
+/* スクロール時にナビゲーションバーが固定されるときのスタイルを調整 */
+.sticky-top.navbar + .mypage-container {
+    margin-top: 160px; /* 固定ナビゲーションバーの高さを考慮して調整 */
+}
+
+body {
+    padding-top: 80px; /* 必要に応じて調整 */
+}
+
+/* 新たに追加するスタイル */
+.navbar {
+    position: fixed !important;
+    width: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 999 !important;
+    background: #FFFFFF !important; /* 固定時の背景色 */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; /* 固定時の下線 */
+}
+
+body {
+    padding-top: 80px !important; /* 固定されたナビゲーションバーの高さを考慮 */
+}
+
+.mypage-container {
+    margin-top: 160px !important; /* 必要に応じて調整 */
+}
+
+/* カード全体の高さを固定 */
+.mypage-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%; /* 必要に応じて調整 */
+    padding: 30px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+    border: 1px solid transparent;
+    transition: .5s;
+    text-align: center;
+    background: #fff; /* 背景色を白に設定 */
+}
+
+/* 画像の高さと位置を固定 */
+.mypage-item img {
+    height: 250px; /* 画像の高さを固定 */
+    width: 250px;  /* 画像の幅を固定 */
+    object-fit: cover; /* 画像のサイズを調整 */
+    border-radius: 50%; /* 画像を円形にする */
+    margin-bottom: 20px;
+}
+
+/* カード内のテキスト配置を均等に */
+.mypage-item h5,
+.mypage-item p {
+    margin: 0; /* マージンをリセット */
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* アイコンボタンを底部に配置 */
+.mypage-item .d-flex {
+    margin-top: auto;
+}
+
+/* カテゴリ一覧のh5タグを太文字にする */
+.service-title {
+    font-weight: bold !important;
+}
+
+/* styles.css */
+
+/* カテゴリカードスタイル */
+.category-card {
+    margin: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 100%;
+    height: auto;
+}
+
+.category-card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.category-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.category-card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* styles.css */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
 }

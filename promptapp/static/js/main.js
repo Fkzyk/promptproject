@@ -10,19 +10,25 @@
         }, 1);
     };
     spinner();
-    
+
     // Initiate the wowjs
     new WOW().init();
 
     // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 45) {
-            $('.navbar').addClass('sticky-top shadow-sm');
+    var handleStickyNavbar = function () {
+        if ($(window).scrollTop() > 45) {
+            $('.navbar').addClass('sticky-top shadow-sm bg-white navbar-light').removeClass('bg-primary navbar-dark');
         } else {
-            $('.navbar').removeClass('sticky-top shadow-sm');
+            $('.navbar').removeClass('sticky-top shadow-sm bg-white navbar-light').addClass('bg-primary navbar-dark');
         }
-    });
-    
+    };
+
+    // Initial check
+    handleStickyNavbar();
+
+    // Check on scroll
+    $(window).scroll(handleStickyNavbar);
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -95,5 +101,12 @@
     if (typeof mdb !== 'undefined') {
         mdb.Ripple.init();
     }
-    
+
+    // Adjust container margin-top if the navbar is sticky
+    $(document).ready(function() {
+        if ($('.navbar').hasClass('sticky-top')) {
+            $('body').css('padding-top', $('.navbar').outerHeight() + 'px'); // Adjust the padding-top of the body
+        }
+    });
+
 })(jQuery);

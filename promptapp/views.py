@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic.base import TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import Category, Prompt
 
 category_map = {
@@ -21,6 +21,17 @@ def category_list(request, category_name):
     template_name = f'{category_name.lower()}-list.html'
     return render(request, template_name, {'items': items})
 
+def category_search(request, category_name):
+    category = get_object_or_404(Category, name=category_name)
+    prompts = Prompt.objects.filter(category=category)
+    categories = Category.objects.all()
+
+    return render(request, 'mypage.html', {
+        'prompts': prompts,
+        'categories': categories,
+        'selected_category': category_name,  # 選択されたカテゴリ名を追加
+    })
+
 class PrivacypolicyView(TemplateView):
     template_name = "privacypolicy.html"
 
@@ -30,7 +41,7 @@ class MyPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['prompts'] = Prompt.objects.all()  # 必要に応じてプロンプトも渡します
+        context['prompts'] = Prompt.objects.all()
         context['category_map'] = category_map
         return context
 
@@ -46,5 +57,10 @@ def search(request):
         category = get_object_or_404(Category, name=category_name)
         prompts = prompts.filter(category=category)
 
-    categories = Category.objects.all()  # カテゴリも渡す
+    categories = Category.objects.all()
     return render(request, 'search_results.html', {'prompts': prompts, 'categories': categories, 'category_map': category_map})
+
+class PromptDetailView(DetailView):
+    model = Prompt
+    template_name = 'prompt_detail.html'
+    context_object_name = 'prompt'
