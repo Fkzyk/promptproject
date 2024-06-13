@@ -1,49 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
-{% load custom_filters %}
-{% block title %}Search Results{% endblock %}
+{% block title %}Prompt Details{% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="container mypage-container mt-5">
-    <div class="search-bar">
-        <form action="{% url 'promptapp:search' %}" method="get">
-            <input type="text" name="q" placeholder="キーワードを入力">
-            <select name="category">
-                <option value="">カテゴリを選択</option>
-                {% for category in categories %}
-                    <option value="{{ category.name }}">{{ category.name|translate_category }}</option>
-                {% endfor %}
-            </select>
-            <button type="submit">Search</button>
-        </form>
+    <h1>{{ prompt.title }}</h1>
+    <div class="card mb-4">
+        <img src="{% static 'img/default_prompt_image.jpg' %}" class="card-img-top" alt="Prompt Image">
+        <div class="card-body">
+            <p class="card-text">{{ prompt.description }}</p>
+            <p class="card-text">{{ prompt.content }}</p>
+        </div>
     </div>
-    <div class="search-results mt-4">
-        {% if prompts %}
-            <div class="row">
-                {% for prompt in prompts %}
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <a href="{% url 'promptapp:prompt_detail' prompt.pk %}">
-                            <img src="{% static 'img/default_prompt_image.jpg' %}" class="card-img-top" alt="Prompt Image">
-                        </a>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ prompt.title }}</h5>
-                            <p class="card-text">{{ prompt.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p>検索結果が見つかりませんでした。</p>
-        {% endif %}
+    <div class="text-center mt-4">
+        <a href="javascript:history.back()" class="btn btn-secondary">戻る</a>
+        <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Home</a>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal">編集/コピーする</button>
     </div>
 </div>
-<!-- ホームに戻るボタン -->
-<div class="text-center mt-4">
-    <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Homeに戻る</a>
+
+<!-- 編集モーダル -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">編集してコピーができます</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>自分に合わせた内容に編集</h6>
+                <textarea id="promptContent" class="form-control" rows="10">{{ prompt.content }}</textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                <button type="button" class="btn btn-success" id="copyButton">コピーする</button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

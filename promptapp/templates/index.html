@@ -16,7 +16,7 @@
         </div>
         <!-- Spinner End -->
 
-        <!-- Hero Start -->
+    <!-- Hero Start -->
         <div class="container-xxl bg-primary hero-header">
             <div class="container">
                 <div class="row g-5 align-items-center">
@@ -29,7 +29,7 @@
                         <a href="#firstprompt-section" class="btn btn-outline-light rounded-pill border-2 py-3 px-5 animated slideInRight">もっと知りたい</a>
                     </div>
                     <div class="col-lg-6 text-center text-lg-start">
-                        <img class="img-fluid animated zoomIn" src={% static 'img/hero.png' %} alt="">
+                        <img class="img-fluid animated zoomIn" src="{% static 'img/hero.png' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
 
 
     <!-- カテゴリ一覧 Start -->
-    <div class="container-xxl py-6">
+    <div id="category-section" class="container-xxl py-6">
         <div class="container">
             <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">カテゴリから探す</div>
@@ -478,8 +478,8 @@
                     </div>
                     <div class="col-md-6 col-lg-3">
                         <h5 class="text-white mb-4">人気検索</h5>
-                        <a class="btn btn-link" href="">ジャンル検索</a>
-                        <a class="btn btn-link" href="">キーワード検索</a>
+                        <a class="btn btn-link" href="{% url 'promptapp:index' %}#category-section">ジャンル検索</a>
+                        <a class="btn btn-link" href="{% url 'promptapp:search' %}">キーワード検索</a>
                         <a class="btn btn-link" href="">お気に入り一覧</a>
                         {% comment %} <a class="btn btn-link" href="">Terms & Condition</a>
                         <a class="btn btn-link" href="">Career</a> {% endcomment %}

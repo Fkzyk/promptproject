@@ -11,4 +11,5 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('category/<str:category_name>/', views.category_search, name='category_search'),
     path('prompt/<int:pk>/', views.PromptDetailView.as_view(), name='prompt_detail'),
+    path('search/', views.search, name='search'),
 ]
