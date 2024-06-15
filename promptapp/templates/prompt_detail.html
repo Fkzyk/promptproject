@@ -7,15 +7,15 @@
 
 {% block content %}
 <div class="container mypage-container mt-5">
-    <h1>{{ prompt.title }}</h1>
-    <div class="card mb-4">
+    <h1 class="text-center mb-4">{{ prompt.title }}</h1> <!-- mb-4クラスを追加して余白を設定 -->
+    <div class="card mb-4 card-custom"> <!-- card-customクラスは任意 -->
         <img src="{% static 'img/default_prompt_image.jpg' %}" class="card-img-top" alt="Prompt Image">
         <div class="card-body">
             <p class="card-text">{{ prompt.description }}</p>
             <p class="card-text">{{ prompt.content }}</p>
         </div>
     </div>
-    <div class="text-center mt-4">
+    <div class="text-center mt-4 margin-bottom-large">
         <a href="javascript:history.back()" class="btn btn-secondary">戻る</a>
         <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Home</a>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal">編集/コピーする</button>

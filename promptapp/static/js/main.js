@@ -139,4 +139,13 @@
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.classList.add('fade-in');
+    });
+    
+    window.addEventListener("beforeunload", function(event) {
+        document.body.classList.add('fade-out');
+    });
+
+    
 })(jQuery); // jQueryを引数に取り、$として使用

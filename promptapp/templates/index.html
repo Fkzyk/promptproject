@@ -39,8 +39,8 @@
         <!-- 初めてのプロンプト Start -->
         <div class="container-xxl py-6">
             <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div id="firstprompt-section" class="col-lg-6 wow zoomIn" data-wow-delay="0.1s">
+                <div class="row g-5 align-items-center anchor-block">
+                    <div id="firstprompt-section" class="col-lg-6 wow zoomIn anchor-adjust" data-wow-delay="0.1s">
                         <img class="img-fluid" src="{% static 'img/about.png' %}" alt="About Image">
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -226,85 +226,86 @@
     </div>
     <!-- カテゴリ一覧 End -->
 
-        <!-- 特徴 Start -->
-        <div class="container-xxl py-6">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
-                        <div id="baseprompt-section"></div>
-                        <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">特徴</div>
-                        <h2 class="mb-4">無料で使用できるChatGPT-4o<br>基本機能</h2>
-                        <p>ChatGPT-4oは 2024年5月13日に発表されました。<br>
-                            テキストだけでなく 音声や画像の入力にも対応するマルチモーダル機能を備え ユーザーは様々な形式でAIとやり取りできます。<br>
-                            無料ユーザーは 利用回数に制限があるものの これらの高度な機能を活用することができます。</p>
-                        <p>これによりChatGPT-4oはユーザーの多様なニーズに応え 日常生活やビジネスにおいて強力なツールとなります。<br>
-                            GPT-4oの導入により より多くのユーザーが最新のAI技術を手軽に利用できるようになりました。</p>
-                        <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="https://openai.com/index/hello-gpt-4o/">ChatGPT-4oをダウンロード</a>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="row g-5">
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fas fa-laptop text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">Webアクセス</h6>
+    <!-- 特徴 Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+            <div class="row g-5 anchor-block"> <!-- 共通クラスを追加 -->
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <div id="baseprompt-section" class="anchor-adjust"></div>
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">特徴</div>
+                    <h2 class="mb-4">無料で使用できるChatGPT-4o<br>基本機能</h2>
+                    <p>ChatGPT-4oは 2024年5月13日に発表されました。<br>
+                        テキストだけでなく 音声や画像の入力にも対応するマルチモーダル機能を備え ユーザーは様々な形式でAIとやり取りできます。<br>
+                        無料ユーザーは 利用回数に制限があるものの これらの高度な機能を活用することができます。</p>
+                    <p>これによりChatGPT-4oはユーザーの多様なニーズに応え 日常生活やビジネスにおいて強力なツールとなります。<br>
+                        GPT-4oの導入により より多くのユーザーが最新のAI技術を手軽に利用できるようになりました。</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="https://openai.com/index/hello-gpt-4o/">ChatGPT-4oをダウンロード</a>
+                </div>
+                <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                    <div id="right-block-section" class="anchor-adjust"></div>
+                    <div class="row g-5">
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fas fa-laptop text-white"></i>
                                 </div>
-                                <span>ウェブアクセス機能を備えており インターネット上の最新情報を検索して提供することができます。最新のニュースやトレンドを即座に取得することが可能です。</span>
+                                <h6 class="mb-0">Webアクセス</h6>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fas fa-store text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">GPTストアの利用</h6>
+                            <span>ウェブアクセス機能を備えており インターネット上の最新情報を検索して提供することができます。最新のニュースやトレンドを即座に取得することが可能です。</span>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fas fa-store text-white"></i>
                                 </div>
-                                <span>GPTストアを通じてカスタムGPTを発見し利用することができます。<br>
-                                    特定の用途に特化したモデルを簡単に活用でき ニーズに合った応答を得ることができます​ 。</span>
+                                <h6 class="mb-0">GPTストアの利用</h6>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fas fa-eye text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">マルチモーダル</h6>
+                            <span>GPTストアを通じてカスタムGPTを発見し利用することができます。<br>
+                                特定の用途に特化したモデルを簡単に活用でき ニーズに合った応答を得ることができます​ 。</span>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fas fa-eye text-white"></i>
                                 </div>
-                                <span>テキストだけでなく 音声や画像の入力にも対応しています。<br>例えば、画像をアップロードして内容を説明してもらうことができます​</span>
+                                <h6 class="mb-0">マルチモーダル</h6>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fa fa-headset text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">対話機能</h6>
+                            <span>テキストだけでなく 音声や画像の入力にも対応しています。<br>例えば、画像をアップロードして内容を説明してもらうことができます​</span>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fa fa-headset text-white"></i>
                                 </div>
-                                <span>自然な会話が可能な対話機能を備えています。<br>
-                                    質問に答えたり 会話を続けたりすることで ユーザーとの双方向での自然なやり取りが楽しめます。</span>
+                                <h6 class="mb-0">対話機能</h6>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fa fa-chart-pie text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">データ分析</h6>
+                            <span>自然な会話が可能な対話機能を備えています。<br>
+                                質問に答えたり 会話を続けたりすることで ユーザーとの双方向での自然なやり取りが楽しめます。</span>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fa fa-chart-pie text-white"></i>
                                 </div>
-                                <span>アップロードしたデータを解析し チャートやグラフを作成することが可能です。<br>これによりビジネスや研究での利用が容易になります。</span>
+                                <h6 class="mb-0">データ分析</h6>
                             </div>
-                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                        <i class="fas fa-bolt text-white"></i>
-                                    </div>
-                                    <h6 class="mb-0">ファイルアップロードと処理</h6>
+                            <span>アップロードしたデータを解析し チャートやグラフを作成することが可能です。<br>これによりビジネスや研究での利用が容易になります。</span>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.6s">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
+                                    <i class="fas fa-bolt text-white"></i>
                                 </div>
-                                <span>ファイルのアップロードが可能で ドキュメントの要約や内容の分析 さらにはライティングの支援まで行え業務効率が大幅に向上します。</span>
+                                <h6 class="mb-0">ファイルアップロードと処理</h6>
                             </div>
+                            <span>ファイルのアップロードが可能で ドキュメントの要約や内容の分析 さらにはライティングの支援まで行え業務効率が大幅に向上します。</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 特徴 End -->
+    </div>
+    <!-- 特徴 End -->
 
         <!-- AIツールロゴ Start -->
         

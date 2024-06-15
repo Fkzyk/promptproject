@@ -1098,3 +1098,92 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/* ページ下部の余裕の調整 */
+.margin-bottom-large {
+    margin-bottom: 40px; 
+}
+
+/* アンカーリンクの位置調整用のスタイル */
+.anchor-adjust::before {
+    content: "";
+    display: block;
+    height: 10em; /* 調整したい高さを指定 */
+    margin-top: 4em;  /* 上にずらす高さを指定 */
+    visibility: hidden;
+}
+
+/* カードのカスタムスタイル */
+.card-custom {
+    max-width: 600px; /* カードの最大幅を指定 */
+    margin: auto; /* カードを中央に配置 */
+    padding: 20px; /* カード内側の余白 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* カードのシャドウ */
+    border-radius: 8px; /* カードの角を丸くする */
+}
+
+.card-img-top {
+    height: auto; /* 画像の高さを自動に設定 */
+    width: 100%; /* 画像の幅を100%に設定 */
+    border-top-left-radius: 8px; /* 画像の角を丸くする */
+    border-top-right-radius: 8px; /* 画像の角を丸くする */
+}
+
+.card-body {
+    padding: 20px; /* カードのテキスト部分の内側の余白 */
+}
+
+.card-text {
+    margin-bottom: 1em; /* 各段落の下に余白を追加 */
+}
+
+.card-custom .card-text {
+    white-space: pre-wrap; /* 改行を保持してテキストを表示 */
+    margin-bottom: 1em; /* テキストブロック間の余白を追加 */
+    padding: 1em; /* テキストブロックの内側の余白を追加 */
+    background-color: #fff; /* 背景色を白に設定 */
+    border-radius: 8px; /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 軽い影を追加 */
+    text-align: left; /* テキストを左揃えにする */
+}
+
+.title-center {
+    text-align: center;
+}
+
+/* カードとタイトルの間に余白を追加 */
+.text-center.mb-4 {
+    margin-bottom: 10rem; /* 追加の余白を設定、必要に応じて値を調整 */
+}
+
+/* フェードインアニメーションの定義 */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* フェードアウトアニメーションの定義 */
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* 検索セクションとプロンプトカードの間に余白を追加 */
+.search-bar {
+    margin-bottom: 50px; /* 必要な余白を指定 */
+}

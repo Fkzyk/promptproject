@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #promptappを追加する
     'promptapp.apps.PromptappConfig',
     'accounts.apps.AccountsConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [

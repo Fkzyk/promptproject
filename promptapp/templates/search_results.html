@@ -3,7 +3,7 @@
 {% load custom_filters %}
 {% block title %}Search Results{% endblock %}
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/mypage.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -43,7 +43,7 @@
     </div>
 </div>
 <!-- ホームに戻るボタン -->
-<div class="text-center mt-4">
+<div class="text-center mt-4 margin-bottom-large">
     <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Homeに戻る</a>
 </div>
 {% endblock %}
