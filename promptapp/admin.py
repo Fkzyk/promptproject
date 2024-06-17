@@ -1,5 +1,6 @@
 from django.contrib import admin
-from import_export import resources
+from import_export import resources, fields
+from import_export.widgets import ForeignKeyWidget
 from import_export.admin import ImportExportModelAdmin
 from .models import Account, MyFavo, Category, Prompt
 
@@ -17,13 +18,19 @@ class CategoryResource(resources.ModelResource):
         model = Category
 
 class PromptResource(resources.ModelResource):
+    category = fields.Field(
+        column_name='category_id',
+        attribute='category',
+        widget=ForeignKeyWidget(Category, 'id'))
+
     class Meta:
         model = Prompt
-        fields = ('id', 'title', 'description', 'content', 'category_id', 'created_at', 'updated_at')
-        export_order = ('id', 'title', 'description', 'content', 'category_id', 'created_at', 'updated_at')
+        fields = ('id', 'title', 'description', 'content', 'category', 'created_at', 'updated_at')
+        export_order = ('id', 'title', 'description', 'content', 'category', 'created_at', 'updated_at')
+    
     def before_import_row(self, row, **kwargs):
         print(f"Importing row: {row}")
-        
+
 # 各モデルに対するAdminクラスを作成
 class AccountAdmin(ImportExportModelAdmin):
     resource_class = AccountResource
