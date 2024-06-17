@@ -21,7 +21,9 @@ class PromptResource(resources.ModelResource):
         model = Prompt
         fields = ('id', 'title', 'description', 'content', 'category_id', 'created_at', 'updated_at')
         export_order = ('id', 'title', 'description', 'content', 'category_id', 'created_at', 'updated_at')
-
+    def before_import_row(self, row, **kwargs):
+        print(f"Importing row: {row}")
+        
 # 各モデルに対するAdminクラスを作成
 class AccountAdmin(ImportExportModelAdmin):
     resource_class = AccountResource
