@@ -1,4 +1,5 @@
 from django import template
+import random
 
 register = template.Library()
 
@@ -14,3 +15,12 @@ def translate_category(value):
     }
     return translations.get(value, value)
 
+@register.filter
+def random_photo(photos):
+    if photos:
+        return random.choice(photos)
+    return None
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)

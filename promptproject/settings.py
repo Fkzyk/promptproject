@@ -32,15 +32,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 既存のアプリケーション
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'promptapp.apps.PromptappConfig',
-    'accounts.apps.AccountsConfig',
+    'promptapp',
+    'accounts',
     'import_export',
+    'promptapp.templatetags',  # 追加
 ]
 
 MIDDLEWARE = [
