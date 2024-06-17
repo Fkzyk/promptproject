@@ -19,7 +19,9 @@
         </div>
         <div class="col-lg-4">
             <div class="card">
+                <div class="blur-bottom">
                 <img src="{% static selected_photos|get_item:prompt.category.name %}" class="card-img-top" alt="Category Image">
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ prompt.category.name|translate_category }}</h5>
                 </div>
