@@ -6,6 +6,15 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 <script src="{% static 'js/main.js' %}"></script>
+<script>
+    function goBack() {
+        if (document.referrer) {
+            window.location.href = document.referrer;
+        } else {
+            window.history.back();
+        }
+    }
+</script>
 {% endblock %}
 
 {% block content %}
@@ -44,7 +53,7 @@
 
 <!-- 前のページに戻るボタンとホームに戻るボタン -->
 <div class="text-center mt-4 home-button footer-margin">
-    <a href="javascript:history.back()" class="btn btn-secondary">前ページ</a>
-    <a href="{% url 'promptapp:index' %}" class="btn btn-primary">  Home  </a>
+    <a href="javascript:goBack()" class="btn btn-secondary">前ページ</a>
+    <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Home</a>
 </div>
 {% endblock %}
