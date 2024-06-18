@@ -147,5 +147,18 @@
         document.body.classList.add('fade-out');
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        // モーダル内のコピー機能
+        document.getElementById('copyButton').addEventListener('click', function() {
+            // テキストエリアの内容をコピー
+            var copyText = document.getElementById('promptContent');
+            copyText.select();
+            document.execCommand("copy");
+    
+            // コピー完了のアラートを表示
+            alert("コピーしました: " + copyText.value);
+        });
+    });
+
     
 })(jQuery); // jQueryを引数に取り、$として使用
