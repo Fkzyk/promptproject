@@ -1237,3 +1237,83 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/* prompt_detail.html専用のスタイル */
+.prompt-detail .border {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.prompt-detail .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.prompt-detail .display-5 {
+    font-weight: bold;
+    color: #333;
+}
+
+.prompt-detail .content {
+    font-size: 1.1em;
+    color: #555;
+    text-align: left;
+}
+
+.prompt-detail .btn {
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body textarea {
+    width: 100%;
+    height: 400px; /* 高さを400pxに設定 */
+    resize: none;
+}
+
+.modal-dialog {
+    max-width: 800px; /* モーダルの最大幅を設定 */
+}
+
+.modal-content {
+    max-height: 90vh; /* モーダルの最大高さを設定 */
+    overflow-y: auto; /* モーダル内でスクロール可能にする */
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 10;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-primary {
+    display: inline-block; /* ボタンの長さを通常のサイズにする */
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.home-button {
+    margin-top: 30px; /* ボタン上部に余裕を持たせる */
+}
+
+.footer-margin {
+    margin-bottom: 30px; /* フッターに余裕を持たせる */
+}

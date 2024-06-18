@@ -126,39 +126,30 @@
         }
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
+    $(document).ready(function () {
         // モーダル内のコピー機能
-        document.getElementById('copyButton').addEventListener('click', function() {
+        $('#copyButton').on('click', function() {
             // テキストエリアの内容をコピー
-            var copyText = document.getElementById('promptContent');
+            var copyText = $('#promptContent');
             copyText.select();
             document.execCommand("copy");
     
             // コピー完了のアラートを表示
-            alert("コピーしました: " + copyText.value);
+            alert("コピーしました: " + copyText.val());
         });
-    });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        document.body.classList.add('fade-in');
+        // Fade-inクラスの追加
+        $('body').addClass('fade-in');
+
+        // テキストエリアの高さを動的に調整
+        $('#editModal').on('shown.bs.modal', function () {
+            var textarea = $('#promptContent');
+            textarea.css('height', '600px');
+        });
     });
     
     window.addEventListener("beforeunload", function(event) {
-        document.body.classList.add('fade-out');
+        $('body').addClass('fade-out');
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // モーダル内のコピー機能
-        document.getElementById('copyButton').addEventListener('click', function() {
-            // テキストエリアの内容をコピー
-            var copyText = document.getElementById('promptContent');
-            copyText.select();
-            document.execCommand("copy");
-    
-            // コピー完了のアラートを表示
-            alert("コピーしました: " + copyText.value);
-        });
-    });
-
-    
 })(jQuery); // jQueryを引数に取り、$として使用

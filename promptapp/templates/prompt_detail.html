@@ -9,25 +9,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-lg-8">
-            <h1>{{ prompt.title }}</h1>
-            <p>{{ prompt.description }}</p>
+<div class="container mt-5 prompt-detail">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 text-center border p-4 rounded">
+            <img src="{% static selected_photos|get_item:prompt.category.name %}" class="img-fluid mb-3" alt="Category Image">
+            <h1 class="display-5 mb-3">{{ prompt.title }}</h1>
             <div class="content">
-                <p>{{ prompt.content }}</p>
+                <pre>{{ prompt.content }}</pre>
             </div>
-            <button id="edit-button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#editModal">編集/コピーする</button>
-        </div>
-        <div class="col-lg-4">
-            <div class="card">
-                <div class="blur-bottom">
-                <img src="{% static selected_photos|get_item:prompt.category.name %}" class="card-img-top" alt="Category Image">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ prompt.category.name|translate_category }}</h5>
-                </div>
-            </div>
+            <button id="edit-button" class="btn btn-secondary mt-4" data-bs-toggle="modal" data-bs-target="#editModal">編集/コピーする</button>
         </div>
     </div>
 </div>
@@ -53,7 +43,7 @@
 </div>
 
 <!-- ホームに戻るボタン -->
-<div class="text-center mt-4">
+<div class="text-center mt-4 home-button footer-margin">
     <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Homeに戻る</a>
 </div>
 {% endblock %}
