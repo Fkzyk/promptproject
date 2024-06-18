@@ -1253,6 +1253,9 @@ body {
 .prompt-detail .display-5 {
     font-weight: bold;
     color: #333;
+    white-space: nowrap; /* 1行で表示させるための設定 */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .prompt-detail .content {
@@ -1316,4 +1319,8 @@ body {
 
 .footer-margin {
     margin-bottom: 30px; /* フッターに余裕を持たせる */
+}
+
+.home-button .btn {
+    margin: 0 10px; /* ボタン間に余白を追加 */
 }

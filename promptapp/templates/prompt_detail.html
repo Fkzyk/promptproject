@@ -42,8 +42,9 @@
     </div>
 </div>
 
-<!-- ホームに戻るボタン -->
+<!-- 前のページに戻るボタンとホームに戻るボタン -->
 <div class="text-center mt-4 home-button footer-margin">
-    <a href="{% url 'promptapp:index' %}" class="btn btn-primary">Homeに戻る</a>
+    <a href="javascript:history.back()" class="btn btn-secondary">前ページ</a>
+    <a href="{% url 'promptapp:index' %}" class="btn btn-primary">  Home  </a>
 </div>
 {% endblock %}
