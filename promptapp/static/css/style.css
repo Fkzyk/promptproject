@@ -1324,3 +1324,17 @@ body {
 .home-button .btn {
     margin: 0 10px; /* ボタン間に余白を追加 */
 }
+
+.hero-header {
+    position: relative;
+    padding-bottom: 10rem; /* 必要に応じて調整 */
+    background-color: var(--primary); /* 必要に応じて背景色を設定 */
+}
+
+.shape-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1; /* 背景として表示するため */
+}

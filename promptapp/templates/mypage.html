@@ -7,7 +7,7 @@
 {% block content %}
 {% include 'navbar.html' %}
 <div class="container mypage-container">
-    <h1>My Page</h1>
+    {% comment %} <h1>My Page</h1> {% endcomment %}
     <div class="search-bar">
         <form action="{% url 'promptapp:search' %}" method="get">
             <input type="text" name="q" placeholder="キーワードを入力">
